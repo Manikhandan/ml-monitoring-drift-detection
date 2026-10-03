@@ -1,0 +1,8 @@
+groups:
+  - name: drift-demo
+    rules:
+      - alert: FeatureDriftHigh
+        expr: drift_psi > 0.2
+        for: 5m
+        labels: {severity: warning}
+        annotations: {summary: "PSI above demo threshold"}
